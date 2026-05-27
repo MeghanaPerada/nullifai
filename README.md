@@ -1,33 +1,21 @@
-# Nullifai
-
+# nullifai
 ZK-KYC for hackathon-grade apps without collecting identity data.
 
-## Tech Stack
+## Usage: Anonymous Credential Verification with QR Codes
 
-- [Next.js](https://nextjs.org) - React framework
-- [Shadcn UI](https://ui.shadcn.com/) - Component library
-- [Tailwind CSS](https://tailwindcss.com) - Styling
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
+Enable anonymous credential verification in your app using QR codes. This allows users to prove eligibility or credentials without revealing their identity.
 
-## Getting Started
+### How it works
+1. The app generates a QR code containing a one-time challenge or credential request.
+2. The user scans the QR code with a compatible wallet or ZK proof app.
+3. The user signs or proves the credential anonymously on their device.
+4. The app verifies the proof server-side or client-side, granting access or benefits without collecting identity data.
 
-1. Install dependencies:
+### Example Flow
+- User visits your app's verification page.
+- A QR code is displayed for the credential challenge.
+- User scans the QR code with their ZK wallet/app.
+- The wallet/app generates a zero-knowledge proof and returns it to your app.
+- Your app verifies the proof and grants access if valid.
 
-```bash
-npm install
-```
-
-2. Start the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
-
-## Project Structure
-
-- `src/app/page.tsx` - Main page
-- `src/app/layout.tsx` - Root layout
-- `src/components/ui/` - Shadcn UI components
-- `src/lib/utils.ts` - Utility functions
+> **Note:** Implementation requires a compatible ZK proof system and wallet/app that supports QR-based credential verification. See documentation for integration details.
